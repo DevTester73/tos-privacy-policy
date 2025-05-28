@@ -1,9 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0;url=fmomogame://auth/tiktok/callback" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Redirect</title>
 </head>
 <body>
-  Redirecting to app...
+    <h1>TikTok OAuth Redirect</h1>
+    <p>Checking for authorization code...</p>
+
+    <script>
+        // Function to get the query parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Check if 'code' exists in the URL
+        const code = getQueryParam('code');
+        const state = getQueryParam('state');
+
+        if (code) {
+            // Log the code to the console
+            console.log('Authorization Code:', code);
+            console.log('State:', state);
+
+            // You can now proceed to exchange the code for an access token in your backend.
+            alert('Authorization successful! Check console for the authorization code.');
+        } else {
+            console.error('No code parameter found. There may have been an issue with the authorization flow.');
+        }
+    </script>
 </body>
 </html>
