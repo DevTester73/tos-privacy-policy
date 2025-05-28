@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="0;url=fmomogame://auth/tiktok/callback" />
+  <script>
+    // Capture the full query string from the current URL
+    const query = window.location.search;
+    // Append it to your custom URI scheme and redirect to your Unity app
+    window.location = "fmomogame://auth/tiktok/callback" + query;
+  </script>
 </head>
 <body>
-  Redirecting to app...
+Redirecting to app... test#2
 </body>
 </html>
